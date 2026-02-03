@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "saturno-beast-api",
+  "public": false,
+  "regions": ["iad1", "sfo1", "cdg1"],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, x-api-key, x-provider, x-model" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/api/health" }
+  ]
+}
