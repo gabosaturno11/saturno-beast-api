@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "name": "saturno-beast-api",
   "public": false,
-  "regions": ["iad1", "sfo1", "cdg1"],
   "headers": [
     {
       "source": "/api/(.*)",
