@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔱 SATURNO BEAST API</title>
+  <meta name="description" content="Multi-provider voice synthesis with the Linguistic Console. Transform text through 10 voice modes.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .subtitle {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .endpoints {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .endpoint {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border-left: 4px solid #4ade80;
+    }
+    
+    .endpoint-path {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      color: #4ade80;
+      font-size: 1.1rem;
+    }
+    
+    .endpoint-desc {
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    .button {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔱 SATURNO BEAST API</h1>
+    <p class="subtitle">Multi-provider voice synthesis with the Linguistic Console</p>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🎛️</div>
+        <h3>10 Voice Modes</h3>
+        <p>Raw, Teacher, Prophet, Mystic, and more</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎚️</div>
+        <h3>6 Faders</h3>
+        <p>Fine-tune certainty, formality, intensity</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🤖</div>
+        <h3>3 Providers</h3>
+        <p>Claude, OpenAI, Gemini</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>Batch Processing</h3>
+        <p>Transform up to 10 items at once</p>
+      </div>
+    </div>
+    
+    <div class="endpoints">
+      <h2 style="margin-bottom: 1rem;">📡 API Endpoints</h2>
+      
+      <div class="endpoint">
+        <div class="endpoint-path">POST /api/synthesize</div>
+        <div class="endpoint-desc">Single content synthesis with voice modes and faders</div>
+      </div>
+      
+      <div class="endpoint">
+        <div class="endpoint-path">POST /api/batch</div>
+        <div class="endpoint-desc">Process up to 10 items in one request</div>
+      </div>
+      
+      <div class="endpoint">
+        <div class="endpoint-path">POST /api/transform</div>
+        <div class="endpoint-desc">Transform same input through multiple voice modes</div>
+      </div>
+      
+      <div class="endpoint">
+        <div class="endpoint-path">GET /api/modes</div>
+        <div class="endpoint-desc">List all voice modes, faders, and presets</div>
+      </div>
+      
+      <div class="endpoint">
+        <div class="endpoint-path">GET /api/health</div>
+        <div class="endpoint-desc">API status and configuration</div>
+      </div>
+    </div>
+    
+    <div class="cta">
+      <a href="https://github.com/gabosaturno11/saturno-beast-api" class="button" target="_blank">
+        📖 View Documentation
+      </a>
+      <a href="/api/health" class="button" style="margin-left: 1rem;">
+        🔍 API Status
+      </a>
+    </div>
+    
+    <div class="footer">
+      <p>Built for the Saturno Forge ecosystem • Bring Your Own Key (BYOK)</p>
+    </div>
+  </div>
+  
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

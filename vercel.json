@@ -10,8 +10,5 @@
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, x-api-key, x-provider, x-model" }
       ]
     }
-  ],
-  "rewrites": [
-    { "source": "/", "destination": "/api/health" }
   ]
 }

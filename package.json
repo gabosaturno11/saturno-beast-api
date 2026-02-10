@@ -20,5 +20,8 @@
     "gemini",
     "linguistic-console",
     "content-transformation"
-  ]
+  ],
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
 }
